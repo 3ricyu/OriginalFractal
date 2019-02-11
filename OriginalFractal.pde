@@ -11,16 +11,20 @@ public void draw()
   myFractal(400,400,400);
   if(change <= 0.1)
      change = change + 0.1;
-  if(change >= 30)
+  if(change >= 25)
     change = change - 0.1;
   
 }
 
 public void keyPressed(){
-  if(keyCode == UP)
+  if(keyCode == UP && change < 15)
     change = change + 0.1;
-   if(keyCode == DOWN)
+  if(keyCode == UP && change >= 15)
+    change = change + 2;
+  if(keyCode == DOWN &&  change < 15)
      change = change - 0.1;
+   if(keyCode == DOWN &&  change >= 15)
+     change = change - 2;
    //if(change == 0)
      //change = 5;
    //if(change == 100)
